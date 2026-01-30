@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react"
+import NavbarComponent from "./components/NavbarComponent"
+import BannerComponent from "./components/BannerComponent"
+import CarouselComponent from "./components/CarouselComponent"
+import PlatformCardComponent from "./components/PlatformCardComponent"
 
-function App() {
-  const [count, setCount] = useState(0)
+
+export default function App() {
+  const [carouselImg, setCarouselImg] = useState ([
+    'https://img.freepik.com/psd-gratuit/modele-banniere-web-vente-du-black-friday_120329-3848.jpg',
+    'https://img.freepik.com/free-vector/gradient-gaming-setup-sale-banner_23-2149833252.jpg',
+  ]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="">
+      <NavbarComponent />
+      <BannerComponent />
+      <CarouselComponent CarouselImages={carouselImg} />
+      <PlatformCardComponent />
+    </div>
   )
 }
 
-export default App
+// ===================================================================================
+// CurrentProgress Note:
+// ended after making the card component, needs some styling, wrapping, and the a href link
+
+// FooterNote: Things to fix
+//  1. The images in Carousel wont change/slide, need fix (check app.jsx and carouselComponent.jsx)
