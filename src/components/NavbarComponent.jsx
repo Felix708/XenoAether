@@ -6,7 +6,7 @@ export default function NavbarComponent() {
         <Navbar fluid rounded>
             <NavbarBrand href="https://flowbite-react.com">
                 <img src={logoImg} className="mr-3 h-6 sm:h-15" />
-                <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">Flowbite React</span>
+                <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">XenoAether</span>
             </NavbarBrand>
             <div className="flex md:order-2">
                 <Button>Get started</Button>
@@ -17,8 +17,8 @@ export default function NavbarComponent() {
                     Home
                 </NavbarLink>
                 <NavbarLink href="#">About</NavbarLink>
-                <NavbarLink href="#">Services</NavbarLink>
                 <NavbarLink href="#">Pricing</NavbarLink>
+                <NavbarLink href="#">All Platforms</NavbarLink>
                 <NavbarLink href="#">Contact</NavbarLink>
             </NavbarCollapse>
         </Navbar>
