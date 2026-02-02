@@ -1,5 +1,6 @@
 import { Button, Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
 import logoImg from '../assets/logoBrand.png';
+import { Link } from "react-router-dom";
 
 export default function NavbarComponent() {
     return (
@@ -13,12 +14,14 @@ export default function NavbarComponent() {
                 <NavbarToggle />
             </div>
             <NavbarCollapse>
-                <NavbarLink href="#" active>
-                    Home
-                </NavbarLink>
+                <Link to="/">
+                    <NavbarLink href="#" active>Home</NavbarLink>
+                </Link>
                 <NavbarLink href="#">About</NavbarLink>
                 <NavbarLink href="#">Pricing</NavbarLink>
-                <NavbarLink href="#">All Platforms</NavbarLink>
+                <Link to="/StoresDetail">
+                    <NavbarLink href="#">All Platforms</NavbarLink>
+                </Link>
                 <NavbarLink href="#">Contact</NavbarLink>
             </NavbarCollapse>
         </Navbar>
