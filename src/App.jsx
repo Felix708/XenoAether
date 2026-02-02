@@ -45,4 +45,6 @@ export default function App() {
 
 // FooterNote: Things to fix
 //  1. The images in Carousel wont change/slide, need fix (check app.jsx and carouselComponent.jsx)
+//  |-> (fix) turns out the image path in the API is local stored, so need to place images icon in assets folder
+// ----------------------------------------------------------------
 //  2. Icon images in platform cards not showing up, need API url thing fix (check platformCardComponent.jsx, app.jsx)
