@@ -1,6 +1,6 @@
 import PlatformCardComponent from "./PlatformCardComponent";
 
-export default function CardWrapperComponent({ children, type }) {
+export default function StoreWrapperComponent({ children, type }) {
     return (
         <div className="max-w-6xl mx-auto p-4">
             {children}

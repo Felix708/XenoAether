@@ -2,7 +2,7 @@ import { Card } from "flowbite-react";
 
 export default function PlatformCardComponent({ type }) {
     return (
-        <Card href="#" className="max-w-sm flex">
+        <Card className="max-w-sm flex">
             <img src={type.images.logo} alt={type.storeName} />
             <div>   
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">

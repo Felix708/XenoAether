@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react"
 import BannerComponent from "./components/BannerComponent"
 import CarouselComponent from "./components/CarouselComponent"
-import CardWrapperComponent from "./components/CardWrapperComponent"
+import StoreWrapperComponent from "./components/StoreWrapperComponent"
 import { Spinner } from "flowbite-react";
 import ReadMoreWrapperComponent from "./components/ReadMoreWrapperComponent"
-import PaymentComponent from "./components/PaymentComponent"
 import AccordionComponent from "./components/AccordionComponent"
 
 
@@ -18,36 +17,19 @@ export default function App() {
   const [question, setQuestion] = useState([
     {
       id: 1,
-      title: "What makes Epstein's Goodies better?",
-      content: "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more."
+      title: "Can this site be trusted?",
+      content: "XenoAether is 100% legit when it comes to distributing games."
     },
     {
       id: 2,
-      title: "Does the items in Epstein's Goodies legit?",
-      content: "Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file."
+      title: "What types of payment can XenoAether use?",
+      content: "Basically any type of digital payment, excluding bitcoins and or blockchains, nfts and crypto."
     },
     {
       id: 3,
-      title: "How to send people 6 feet under without alerting the cops?",
-      content: "The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages."
+      title: "How to contact the customer service?",
+      content: "You can contact XenoAether's Customer Service via email XenoCS@corporate.id and we're open 24/7"
     }
-  ]);
-  const [payment, setPayment] = useState([
-    {
-      id: 1,
-      title: "Paypal",
-      image: "https://www.pngall.com/wp-content/uploads/5/PayPal-Logo-PNG-Free-Image.png",
-    },
-    {
-      id: 2,
-      title: "Credit Card",
-      image: "https://tse4.mm.bing.net/th/id/OIP.kDaG0rL2cfRuyMlfHhLfqAHaHa?pid=Api&P=0&h=180",
-    },
-    {
-      id: 3,
-      title: "Apple Pay",
-      image: "https://tse1.mm.bing.net/th/id/OIP.tJKOUZzlAnV60dSnP7OXfgHaE8?pid=Api&P=0&h=180",
-    },
   ]);
 
   async function getStoresData() {
@@ -82,9 +64,7 @@ export default function App() {
         ) : (
           <div className="">
             <CarouselComponent CarouselImages={carouselImg} />
-            <CardWrapperComponent type={platformType}></CardWrapperComponent>
-            <ReadMoreWrapperComponent />
-            <PaymentComponent methods={payment} />
+            <StoreWrapperComponent type={platformType}></StoreWrapperComponent>
             <AccordionComponent question={question} />
           </div>
         )
@@ -101,15 +81,9 @@ export default function App() {
 //  1. The images in Carousel wont change/slide, need fix (check app.jsx and carouselComponent.jsx)
 //  |-> (fix) turns out the image path in the API is local stored, so need to place images icon in assets folder
 // ----------------------------------------------------------------
-//  2. Icon images in platform cards not showing up, need API url thing fix (check platformCardComponent.jsx, app.jsx)
+//  2. Icon images in platform cards not showing up, need API url thing fix (check platformCardComponent.jsx, app.jsx) (if possible)
 // 
 // --------------------------------------------------------------------------
-// 3. Fix to add the more read more card to the left side of the web (see image for reference)
+// 3. Change layout for all games items. Theres duplicates of games with diffetent stores, so add the store name. add search bar in all games page
 // 
 // --------------------------------------------------------------------------
-// 4. Fix store detail page to show all platform cards (check storesDetail.jsx)
-// 
-// --------------------------------------------------------------------------
-// 5. Probably add useContext to store API data
-// 
-// ------------------------------------------------------------------------

@@ -19,8 +19,8 @@ export default function NavbarComponent() {
                 </Link>
                 <NavbarLink href="#">About</NavbarLink>
                 <NavbarLink href="#">Pricing</NavbarLink>
-                <Link to="/StoresDetail">
-                    <NavbarLink href="#">All Platforms</NavbarLink>
+                <Link to="/AllGames">
+                    <NavbarLink href="#">All Games</NavbarLink>
                 </Link>
                 <NavbarLink href="#">Contact</NavbarLink>
             </NavbarCollapse>
