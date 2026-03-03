@@ -2,8 +2,7 @@ import { useEffect, useState } from "react"
 import BannerComponent from "./components/BannerComponent"
 import CarouselComponent from "./components/CarouselComponent"
 import StoreWrapperComponent from "./components/StoreWrapperComponent"
-import { Spinner } from "flowbite-react";
-import ReadMoreWrapperComponent from "./components/ReadMoreWrapperComponent"
+import { Spinner, Button } from "flowbite-react";
 import AccordionComponent from "./components/AccordionComponent"
 
 
@@ -18,7 +17,7 @@ export default function App() {
     {
       id: 1,
       title: "Can this site be trusted?",
-      content: "XenoAether is 100% legit when it comes to distributing games."
+      content: "XenoAether is 100% legit when it comes to finding best deals for all games."
     },
     {
       id: 2,
@@ -41,7 +40,7 @@ export default function App() {
       }
 
       const result = await response.json();
-      setPlatformType(result.slice(0, 3));
+      setPlatformType(result.slice(0, 4));
       setLoading(false);
     } catch (error) {
       console.error(error.message);
@@ -64,7 +63,13 @@ export default function App() {
         ) : (
           <div className="">
             <CarouselComponent CarouselImages={carouselImg} />
-            <StoreWrapperComponent type={platformType}></StoreWrapperComponent>
+            <div className="flex flex-col items-center">
+              <h1 className="text-2xl font-bold mt-4">Available Stores</h1>
+              <StoreWrapperComponent type={platformType} />
+              <Button pill>
+                See All Stores
+              </Button>
+            </div>
             <AccordionComponent question={question} />
           </div>
         )
@@ -74,9 +79,6 @@ export default function App() {
 }
 
 // ===================================================================================
-// CurrentProgress Note:
-// ended after making the card component, needs some styling, wrapping, and the a href link
-
 // FooterNote: Things to fix
 //  1. The images in Carousel wont change/slide, need fix (check app.jsx and carouselComponent.jsx)
 //  |-> (fix) turns out the image path in the API is local stored, so need to place images icon in assets folder
@@ -86,4 +88,6 @@ export default function App() {
 // --------------------------------------------------------------------------
 // 3. Change layout for all games items. Theres duplicates of games with diffetent stores, so add the store name. add search bar in all games page
 // 
+// --------------------------------------------------------------------------
+// 4. make it so the games has the "Deals available at: {storename}" working..
 // --------------------------------------------------------------------------
