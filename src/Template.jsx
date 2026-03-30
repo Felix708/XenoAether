@@ -4,8 +4,8 @@ import { Outlet } from "react-router-dom";
 export default function Templates() {
     return (
         <>
-        <NavbarComponent />
-        <Outlet />
+            <NavbarComponent />
+            <Outlet />
         </>
     )
 }

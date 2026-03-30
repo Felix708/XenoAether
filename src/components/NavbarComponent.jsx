@@ -1,6 +1,7 @@
 import { Button, Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
 import logoImg from '../assets/logoBrand.png';
 import { Link } from "react-router-dom";
+import { IoIosCart } from "react-icons/io";
 
 export default function NavbarComponent() {
     return (
@@ -12,6 +13,9 @@ export default function NavbarComponent() {
                 </NavbarBrand>
             </Link>
             <div className="flex md:order-2">
+                <Link to="/Cart">
+                    <IoIosCart className="text-4xl me-2 pt-1 text-white" />
+                </Link>
                 <Button>Get started</Button>
                 <NavbarToggle />
             </div>

@@ -4,6 +4,8 @@ import AllGames from "../pages/AllGames";
 import Pricing from "../pages/Pricing";
 import AllGameDeals from "../pages/AllGameDeals";
 import Template from "../Template";
+import CartChekout from "../pages/CartChekout";
+import Cart from "../pages/Cart";
 
 export const router = createBrowserRouter([
     {
@@ -25,6 +27,14 @@ export const router = createBrowserRouter([
             {
                 path: "/AllGameDeals",
                 element: <AllGameDeals />,
+            },
+            {
+                path: "/Cart",
+                element: <Cart />,
+            },
+            {
+                path: "/CartChekout",
+                element: <CartChekout />,
             },
         ]
     },
