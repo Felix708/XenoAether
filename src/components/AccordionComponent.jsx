@@ -3,7 +3,6 @@ import { Accordion, AccordionContent, AccordionPanel, AccordionTitle } from "flo
 export default function AccordionComponent({ question }) {
     return (
         <div className="mx-10">
-            <h2 className="text-2xl font-bold mx-10 mb-2 mt-12">Frequently Asked Questions</h2>
             <Accordion className="my-4 mx-10">
                 {
                     question.map((item) => (

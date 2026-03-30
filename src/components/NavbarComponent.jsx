@@ -19,12 +19,12 @@ export default function NavbarComponent() {
                 <Link to="/">
                     <NavbarLink href="#" active>Home</NavbarLink>
                 </Link>
-                <NavbarLink href="#">About</NavbarLink>
-                <NavbarLink href="#">Pricing</NavbarLink>
+                <Link to="/Pricing">
+                    <NavbarLink href="#">Pricing</NavbarLink>
+                </Link>
                 <Link to="/AllGames">
                     <NavbarLink href="#">All Games</NavbarLink>
                 </Link>
-                <NavbarLink href="#">Contact</NavbarLink>
             </NavbarCollapse>
         </Navbar>
     )
