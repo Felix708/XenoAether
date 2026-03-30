@@ -146,13 +146,5 @@ export default function App() {
 // ===================================================================================
 // FooterNote: Things to fix
 //  1. The images in Carousel wont change/slide, need fix (check app.jsx and carouselComponent.jsx)
-//  |-> (fix) turns out the image path in the API is local stored, so need to place images icon in assets folder
+//  
 // ----------------------------------------------------------------
-//  2. Icon images in platform cards not showing up, need API url thing fix (check platformCardComponent.jsx, app.jsx) (if possible)
-// 
-// --------------------------------------------------------------------------
-// 3. Change layout for all games items. Theres duplicates of games with diffetent stores, so add the store name. add search bar in all games page
-// 
-// --------------------------------------------------------------------------
-// 4. make it so the games has the "Deals available at: {storename}" working..
-// --------------------------------------------------------------------------
