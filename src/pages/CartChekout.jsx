@@ -25,7 +25,7 @@ export default function CartChekout() {
 
                 {isPaid && (
                     <Alert color="success" icon={HiInformationCircle} className="mb-8">
-                        <span className="font-medium">Payment processing!</span> Your transaction is being verified by the storefront.
+                        <span className="font-medium">Payment processing!</span> Your transaction is being processed by the bank...
                     </Alert>
                 )}
 

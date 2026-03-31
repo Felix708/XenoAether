@@ -6,11 +6,15 @@ export default function CartProvider({ children }) {
     const [cart, setCart] = useState([]);
     const [openModalConfirmation, setOpenModalConfirmation] = useState(false);
     const [addedGameName, setAddedGameName] = useState("");
+    const [openModalError, setOpenModalError] = useState(false);
+    const [errorGameName, setErrorGameName] = useState("");
 
     function addtoCart(game) {
         setCart((prev) => {
             const exist = prev.find((item) => item.id === (game.gameID || game.id));
             if (exist) {
+                setErrorGameName(game.title);
+                setOpenModalError(true);
                 return prev;
             }
             
@@ -53,7 +57,10 @@ export default function CartProvider({ children }) {
                 deleteAll, 
                 setOpenModalConfirmation, 
                 openModalConfirmation,
-                addedGameName
+                addedGameName,
+                setOpenModalError,
+                openModalError,
+                errorGameName
             }}
         >
             {children}

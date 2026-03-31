@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { Spinner } from "flowbite-react";
 import { IoArrowBackOutline } from "react-icons/io5";
 import ItemsGridWrapper from "../components/ItemsGridWrapper";
+import { CartContext } from "../contexts/CartContext";
+import ModalComponent from "../components/ModalComponent";
 
 export default function AllGameDeals() {
+    const { openModalConfirmation, setOpenModalConfirmation, addedGameName, openModalError, setOpenModalError, errorGameName } = useContext(CartContext);
     const [searchParams] = useSearchParams();
     const gameID = searchParams.get("id");
 
@@ -95,7 +98,7 @@ export default function AllGameDeals() {
                 {loading ? (
                     <div className="flex flex-col justify-center items-center min-h-[50vh]">
                         <Spinner aria-label="Loading library..." size="xl" color="info" />
-                        <p className="font-bold mt-4 text-cyan-600 dark:text-cyan-400 text-lg animate-pulse">Scanning storefronts...</p>
+                        <p className="font-bold mt-4 text-cyan-600 dark:text-cyan-400 text-lg animate-pulse">Loading Available Stores...</p>
                     </div>
                 ) : (
                     <div className="flex flex-col items-center w-full">
@@ -105,6 +108,19 @@ export default function AllGameDeals() {
                     </div>
                 )}
             </div>
+
+            <ModalComponent 
+                show={openModalConfirmation} 
+                onClose={() => setOpenModalConfirmation(false)} 
+                gameName={addedGameName} 
+            />
+
+            <ModalComponent 
+                show={openModalError} 
+                onClose={() => setOpenModalError(false)} 
+                gameName={errorGameName} 
+                isError={true}
+            />
         </section>
     );
 }
