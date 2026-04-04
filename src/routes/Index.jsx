@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom"
+import { createHashRouter } from "react-router-dom"
 import App from "../App";
 import AllGames from "../pages/AllGames";
 import Pricing from "../pages/Pricing";
@@ -7,7 +7,7 @@ import Template from "../Template";
 import CartChekout from "../pages/CartChekout";
 import Cart from "../pages/Cart";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
     {
         path: "/",
         element: <Template />,
@@ -38,4 +38,6 @@ export const router = createBrowserRouter([
             },
         ]
     },
-]);
+], {
+    basename: "/XenoAether/",
+});
