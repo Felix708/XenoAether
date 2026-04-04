@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
+import { IoIosCart } from "react-icons/io";
 
 export default function GameCardsComponent({ games, stores = [], isDetailView = false }) {
     const { addtoCart } = useContext(CartContext);
@@ -65,11 +66,11 @@ export default function GameCardsComponent({ games, stores = [], isDetailView = 
                             className="rounded-lg bg-cyan-700 px-4 py-2 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800 ml-auto cursor-pointer"
                             onClick={() => addtoCart(games)}
                         >
-                            Add to cart
+                            <IoIosCart className="text-4xl me-2 pt-1 text-white" />
                         </button>
                     )}
                 </div>
             </div>
         </div>
     )
-}
+}
